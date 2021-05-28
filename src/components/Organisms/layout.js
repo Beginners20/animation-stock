@@ -1,16 +1,12 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import {css, Global} from "@emotion/react"
+import {func} from "../../emotionStyles/function"
+
 import Header from "./header"
-import "./layout.css"
+import "@/assets/css/reset.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +21,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Global
+        styles={[global]}
+      />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
@@ -51,5 +50,29 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+const global = css({
+  ".display-pc": {
+    [func.bp("pc")]: {
+      display: "block"
+    },
+    [func.bp("sp")]: {
+      display: "none!important"
+    }
+  },
+  ".display-sp": {
+    [func.bp("pc")]: {
+      display: "none!important"
+    },
+    [func.bp("ep")]: {
+      display: "block"
+    }
+  },
+  "img": {
+    width: "100%",
+    display: "block",
+    lineHeight: 1
+  }
+})
 
 export default Layout
