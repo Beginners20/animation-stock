@@ -35,7 +35,7 @@
     -  `emotion`を用いたスタイリングを行なってください。
     -  `emotion`の記述方法に関しては、以下のルールで既出してください。
     -  ```emotion.js
-       import {vw} from ./function.js;
+       import {func} from "@/emotionStyle/function.js"
        return (
          <h1 css={style}>Hello,World!</h1>
        )
@@ -43,9 +43,14 @@
         const style = css({
             color: "#fff",
             fontSize: "24px",
-            marginTop: vw(15),
+            marginTop: func.vw(15),
             "&:after": {
                  content: "''"
             }
          });
         ```
+       
+### 追加パッケージ
+- gatsby-plugin-emotion
+- @emotion/react
+- gatsby-plugin-root-import
