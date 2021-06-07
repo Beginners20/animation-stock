@@ -1,0 +1,14 @@
+<svg id="グループ_1" data-name="グループ 1" xmlns="http://www.w3.org/2000/svg" width="22.5" height="11.125" viewBox="0 0 22.5 11.125">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 0.73px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="線_2" data-name="線 2" class="cls-1" d="M1315,891l10.61-10.607Z" transform="translate(-1314.75 -880.125)"/>
+  <path id="線_2-2" data-name="線 2" class="cls-1" d="M1337,891l-10.61-10.607Z" transform="translate(-1314.75 -880.125)"/>
+</svg>

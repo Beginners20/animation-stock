@@ -1,33 +1,14 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import {css} from "@emotion/react"
+import {f} from "~/emotionStyles/function"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+  <header css={header}>
+    <Link to={"/"}>
+      <h1 css={title}>Animation Stock</h1>
+    </Link>
   </header>
 )
 
@@ -39,4 +20,23 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
+
+const header = css({
+  [f.bp("pc")]: {
+    display: "flex",
+    alignItems: "center",
+    height: f.vw(100),
+    width: "100%",
+    paddingLeft: f.vw(20),
+    backgroundColor: "#fff",
+    boxShadow: " 0px 0px 27px 0px rgba(3, 0, 0, 0.13)"
+  }
+})
+
+const title = css({
+  [f.bp("pc")]: {
+    fontSize: f.vw(34),
+    color: "#f7882f"
+  }
+})
 export default Header

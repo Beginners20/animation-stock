@@ -1,30 +1,21 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import {css, Global} from "@emotion/react"
-import {func} from "../../emotionStyles/function"
+import {f} from "~/emotionStyles/function"
 
 import Header from "./header"
-import "@/assets/css/reset.css"
+import Footer from "~/components/Organisms/footer"
+import BackTop from "~/components/Molecules/backToTop"
+import "~/assets/css/reset.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <Global
         styles={[global]}
       />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header/>
       <div
         style={{
           margin: `0 auto`,
@@ -33,16 +24,11 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
+      <div css={BackTopWrap}>
+        <BackTop />
+      </div>
+      <Footer />
     </>
   )
 }
@@ -50,21 +36,26 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
 const global = css({
+  "body": {
+    fontFamily: "Roboto, 'Noto Sans JP', sanserif",
+    fontWeight: "400",
+    position: "relative",
+    minHeight: "100vh"
+  },
   ".display-pc": {
-    [func.bp("pc")]: {
+    [f.bp("pc")]: {
       display: "block"
     },
-    [func.bp("sp")]: {
+    [f.bp("sp")]: {
       display: "none!important"
     }
   },
   ".display-sp": {
-    [func.bp("pc")]: {
+    [f.bp("sp")]: {
       display: "none!important"
     },
-    [func.bp("ep")]: {
+    [f.bp("sp")]: {
       display: "block"
     }
   },
@@ -72,6 +63,16 @@ const global = css({
     width: "100%",
     display: "block",
     lineHeight: 1
+  }
+})
+
+const BackTopWrap = css({
+  [f.bp("pc")]: {
+    position: "fixed",
+    bottom: f.vw(77),
+    right: f.vw(20),
+    width: f.vw(40),
+    height: f.vw(40)
   }
 })
 

@@ -11,6 +11,21 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+            weights: [`400`, `700`]
+          },
+          {
+            family: `Noto Sans JP`,
+            weights: [`400`, `700`]
+          }
+        ]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -20,7 +35,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
-        "@": path.join(__dirname, 'src'),
+        "~": path.join(__dirname, 'src'),
       }
     },
     `gatsby-transformer-sharp`,
