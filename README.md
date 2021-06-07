@@ -1,5 +1,15 @@
 # Animation Stock
 
+### Scripts
+```scripts
+   #start
+    npm run start
+   
+   #build
+   npm run build
+```
+
+
 ### versions
 | key | value |
 |------|---------|
@@ -34,7 +44,7 @@
             color: "#fff",
             fontSize: "24px",
             marginTop: vw(15),
-            ["&:after"]: {
+            "&:after": {
                  content: "''"
             }
          });
