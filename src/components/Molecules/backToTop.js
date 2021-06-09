@@ -5,7 +5,7 @@ import {f} from "~/emotionStyles/function"
 import Arrow from "~/assets/images/icn_back_to_top.svg"
 
 const BackTop = () => {
-  const scroller = () => {
+  function scroller() {
       window.scrollTo({
         top: 0,
         left: 0,

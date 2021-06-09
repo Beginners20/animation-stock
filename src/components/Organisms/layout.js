@@ -16,15 +16,7 @@ const Layout = ({ children }) => {
         styles={[global]}
       />
       <Header/>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
       <div css={BackTopWrap}>
         <BackTop />
       </div>
@@ -75,5 +67,5 @@ const BackTopWrap = css({
     height: f.vw(40)
   }
 })
-
+console.log(window.innerHeight - ((175 / 1336) * window.innerWidth))
 export default Layout
