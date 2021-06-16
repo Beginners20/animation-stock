@@ -26,19 +26,19 @@ const newsDatum = css({
 })
 
 const newsTitle = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     fontSize: f.vw(18)
   }
 })
 
 const newsDate = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     fontSize: f.vw(15)
   }
 })
 
 const newsDescription = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     fontSize: f.vw(15)
   }
 })

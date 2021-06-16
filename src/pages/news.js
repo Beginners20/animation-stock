@@ -31,7 +31,7 @@ class News extends React.Component {
 }
 
 const newsWrap = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     width: f.vw(415),
     margin: `${f.vw(70)} auto 0 auto`
   }

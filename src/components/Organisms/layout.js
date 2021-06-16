@@ -54,7 +54,7 @@ const global = css({
 })
 
 const BackTopWrap = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     position: "fixed",
     bottom: f.vw(77),
     right: f.vw(20),

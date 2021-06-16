@@ -22,7 +22,7 @@ Header.defaultProps = {
 
 
 const header = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     display: "flex",
     alignItems: "center",
     height: f.vw(100),
@@ -34,7 +34,7 @@ const header = css({
 })
 
 const title = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     fontSize: f.vw(34),
     color: "#f7882f"
   }

@@ -22,7 +22,7 @@ const BackTop = () => {
 }
 
 const backWrap = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -35,7 +35,7 @@ const backWrap = css({
 })
 
 const backArrow = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     width: f.vw(22)
   }
 })

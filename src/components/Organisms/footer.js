@@ -11,7 +11,7 @@ const Footer = () => {
 };
 
 const footerWrap = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -25,7 +25,7 @@ const footerWrap = css({
 })
 
 const footerText = css({
-  [f.bp("pc")]: {
+  [f.pc()]: {
     fontSize: f.vw(15)
   }
 })
