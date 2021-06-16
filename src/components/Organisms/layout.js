@@ -28,26 +28,21 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
 const global = css({
-  "body": {
-    fontFamily: "Roboto, 'Noto Sans JP', sanserif",
-    fontWeight: "400",
-    position: "relative",
-    minHeight: "100vh"
-  },
   ".display-pc": {
-    [f.bp("pc")]: {
+    [func.bp("pc")]: {
       display: "block"
     },
-    [f.bp("sp")]: {
+    [func.bp("sp")]: {
       display: "none!important"
     }
   },
   ".display-sp": {
-    [f.bp("sp")]: {
+    [func.bp("pc")]: {
       display: "none!important"
     },
-    [f.bp("sp")]: {
+    [func.bp("ep")]: {
       display: "block"
     }
   },
