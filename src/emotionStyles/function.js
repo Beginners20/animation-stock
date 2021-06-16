@@ -1,6 +1,6 @@
 import { pcWidth, spWidth } from "./variable"
 
-export class func {
+export class f {
   static vw(arg, displaySize = pcWidth) {
     return `${arg / displaySize * 100}vw`
   }
