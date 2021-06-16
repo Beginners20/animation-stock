@@ -31,18 +31,18 @@ Layout.propTypes = {
 
 const global = css({
   ".display-pc": {
-    [f.bp("pc")]: {
+    [f.pc()]: {
       display: "block"
     },
-    [f.bp("sp")]: {
+    [f.sp()]: {
       display: "none!important"
     }
   },
   ".display-sp": {
-    [f.bp("pc")]: {
+    [f.pc()]: {
       display: "none!important"
     },
-    [f.bp("ep")]: {
+    [f.sp()]: {
       display: "block"
     }
   },
