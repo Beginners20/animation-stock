@@ -4,7 +4,7 @@ import {css} from "@emotion/react"
 import Layout from "../components/Organisms/layout"
 import Seo from "../components/seo"
 
-import astronaut from  "@/assets/images/gatsby-astronaut.png"
+import astronaut from  "~/assets/images/gatsby-astronaut.png"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
