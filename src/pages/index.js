@@ -1,35 +1,56 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import {css} from "@emotion/react"
+import {f} from "~/emotionStyles/function"
 import Layout from "../components/Organisms/layout"
 import Seo from "../components/seo"
 
-import astronaut from  "~/assets/images/gatsby-astronaut.png"
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1 css={head}>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p className={"display-sp"}>Now go build something great.</p>
-    <div css={image} className={"display-pc"}>
-      <img src={astronaut} alt="hoge" />
-    </div>
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+//Components
+import { LinkButton, BasicButton, RouteButton } from "~/components/Atoms/Buttons"
 
-const head = css({
-  color: "#ff0000",
-  "&:after": {
-    content: '""'
+const IndexPage = () => {
+  // スタイル
+  const baseButton = css({
+    width: f.vw(200),
+    textAlign: "center",
+    fontSize: f.vw(30)
+  })
+  const header = css({
+    margin: `${f.vw(30)} 0 ${f.vw(10)} 0`
+  })
+  // 関数
+  const pushAlert = () => {
+    alert("CLICK!")
   }
-})
-
-const image = css({
-  width: "300px",
-})
+return (
+    <Layout>
+      <Seo title="Home" />
+      <h2 css={header}>Basic Button</h2>
+      <div css={baseButton}>
+        <BasicButton
+          bgColor={"#fff"}
+          textColor={"#000"}
+          click={pushAlert}
+        >
+          Basic
+        </BasicButton>
+      </div>
+      <h2 css={header}>Link Button</h2>
+      <div css={baseButton}>
+        <LinkButton>
+          LINK
+        </LinkButton>
+      </div>
+      <h2 css={header}>Route Button</h2>
+      <div css={baseButton}>
+        <RouteButton
+          textColor={"#dcc7aa"}
+          href={"/page-2"}
+        >
+          Route
+        </RouteButton>
+      </div>
+    </Layout>
+  );
+}
 
 export default IndexPage

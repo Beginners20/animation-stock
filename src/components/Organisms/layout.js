@@ -6,7 +6,6 @@ import {f} from "~/emotionStyles/function"
 
 import Header from "./header"
 import Footer from "~/components/Organisms/footer"
-import BackTop from "~/components/Molecules/backToTop"
 import "~/assets/css/reset.css"
 
 const Layout = ({ children }) => {
@@ -16,10 +15,7 @@ const Layout = ({ children }) => {
         styles={[global]}
       />
       <Header/>
-      <main>{children}</main>
-      <div css={BackTopWrap}>
-        <BackTop />
-      </div>
+      <main css={mainStyle}>{children}</main>
       <Footer />
     </>
   )
@@ -53,14 +49,8 @@ const global = css({
   }
 })
 
-const BackTopWrap = css({
-  [f.pc()]: {
-    position: "fixed",
-    bottom: f.vw(77),
-    right: f.vw(20),
-    width: f.vw(40),
-    height: f.vw(40)
-  }
+const mainStyle = css({
+  padding: `${f.vw(30)} ${f.vw(60)}`
 })
-console.log(window.innerHeight - ((175 / 1336) * window.innerWidth))
+
 export default Layout
