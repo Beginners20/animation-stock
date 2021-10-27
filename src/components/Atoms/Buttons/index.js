@@ -37,29 +37,11 @@ BasicButton.defaultProps = {
 }
 
 export const LinkButton = ({href, target, children, bgColor, textColor}) => {
-  return (
-    <a href={href} target={target}>
-      <BasicButton
-        bgColor={bgColor}
-        textColor={textColor}
-      >
-        {children}
-      </BasicButton>
-    </a>
-  );
+  return (<></>);
 }
 
 export const RouteButton = ({href, children, bgColor, textColor}) => {
-  return (
-    <Link to={href}>
-      <BasicButton
-        bgColor={bgColor}
-        textColor={textColor}
-      >
-        {children}
-      </BasicButton>
-    </Link>
-  );
+  return (<></>);
 }
 
 LinkButton.defaultProps = {
